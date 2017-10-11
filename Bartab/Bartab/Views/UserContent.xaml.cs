@@ -35,9 +35,9 @@ namespace Bartab
             this.InitializeComponent();
             UCVM = new UserContentViewModel();
 
-            UCVM.LoadUserAsync();
-            UCVM.LoadDrinkAsync();
-            UCVM.LoadVarerAsync();
+
+            UCVM.LoadUser();
+            UCVM.LoadVarer();
                         
             Products.IsEnabled = false;
             Køb.IsEnabled = false;
@@ -81,17 +81,24 @@ namespace Bartab
             if (found == false)
             {
                 bool isDrink = false;
+                float pris = 0;
                 foreach (var item in UCVM.vareItem)
                 {
                     if (name == item.Navn)
                         isDrink = item.ErDrink;
+                }
+                foreach(var item in UCVM.vare)
+                {
+                    if (name == item.Navn)
+                        pris = item.Pris;
                 }
                 UCVM.IndkobListe.Add(new OrderItem
                 {
                     Name = name,
                     Amount = 1,
                     Id = Convert.ToInt32(((Button)sender).Name.ToString()),
-                    ErDrink = isDrink
+                    ErDrink = isDrink,
+                    Price = pris
                 });
                 UCVM.IndkobListe[UCVM.IndkobListe.Count - 1].Combine();
             }
@@ -127,7 +134,7 @@ namespace Bartab
 
         private void Buy(object sender, RoutedEventArgs e)
         {
-            UCVM.BuyAsync();
+            UCVM.BuySplit();
             Find_bruger.SelectedIndex = -1;
             Products.IsEnabled = false;
             Køb.IsEnabled = false;
@@ -150,12 +157,6 @@ namespace Bartab
             Cancel.IsEnabled = false;
             if (Find_bruger == null) return;
             if (Find_bruger != null) { Products.IsEnabled = true; }
-            //if (App.first)
-            //{
-            //    UCVM.LoadDrinkAsync();
-            //    UCVM.LoadVarerAsync();
-            //    App.first = false;
-            //}
             var combo = (ComboBox)sender;
             try
             {

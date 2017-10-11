@@ -5,11 +5,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bartab.Model;
+using Bartab.Assets;
 
 namespace ViewModel
 {
     public class UserContentViewModel
     {
+        private UserContentModel UCM = new UserContentModel();
+
         public ObservableCollection<OrderItem> IndkobListe;
         public ObservableCollection<User> brugere;
         public List<OrderItem> TempList;
@@ -28,61 +32,55 @@ namespace ViewModel
             drink = new ObservableCollection<Drink>();
             vareItem = new ObservableCollection<VareItem>();
         }
-        
-        public async Task LoadVarerAsync()
+
+        public void LoadVarer()
         {
-            //VareItem load
+            try
+            {
+                var temp = UCM.LoadVarer();
+                foreach (Vare item in temp)
+                {
+                    vare.Add(item);
+                }
+            }
+            catch (Exception e)
+            { }
+
         }
 
-        public async Task LoadDrinkAsync()
+        public void LoadDrink()
         {
             //drink load
         }
 
-        public async Task LoadUserAsync()
+        public void LoadUser()
         {
-            //add bruger-object to brugercombo
-        }
-
-        public async Task BuyAsync()//skal måske laves om så der ikke er drinks med. Fremtiden vil vise det
-        {
-            decimal FuldPris = 0;
-
-            foreach (var item in IndkobListe)
+            try
             {
-                if (item.ErDrink)
+                var semester = UCM.semester();
+                var temp = UCM.LoadUsers();
+                foreach (User item in temp)
                 {
-                    for (int i = 0; i < drink.Count; i++)
+                    var UserSemesterTemp = item.Semester.Split(',');
+                    if (Convert.ToInt32(UserSemesterTemp[UserSemesterTemp.Length - 2]) == semester)
                     {
-                        if (drink[i].Id == item.Id)
-                        {
-                            for (int j = 0; j < drink[i].Ingrediense.Count; j++)
-                            {
-                                for (int k = 0; k < vare.Count; k++)
-                                {
-                                    if (drink[i].Ingrediense[j].Id == vare[k].Id)
-                                    {
-                                        FuldPris += vare[k].Pris * item.Amount;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < vare.Count; i++)
-                    {
-                        if (vare[i].Id == item.Id)
-                        {
-                            FuldPris += vare[i].Pris * item.Amount;
-                            break;
-                        }
+                        brugere.Add(item);
+                        brugereCombo.Add(item.VærelseNr + " " + item.Fornavn);
                     }
                 }
             }
-            //send indkøbsliste og få oprettet ordre
+            catch (Exception e)
+            { }
+        }
+
+        public bool BuySplit()
+        {
+            int result = 0;
+            foreach (var item in IndkobListe)
+            {
+                result+=UCM.Buy(BrugerId, item.Id, item.Amount, item.Price);
+            }
+            return result==0;
         }
     }
 }

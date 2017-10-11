@@ -14,8 +14,8 @@ namespace Data
     {
         public int Id { get; set; }
         public string Navn { get; set; }
-        public decimal Pris { get; set; }
-        public DateTime Tidsstempel { get; set; }
+        public float Pris { get; set; }
+        public int Raekkefoelge { get; set; }
     }
 
     public class Drink

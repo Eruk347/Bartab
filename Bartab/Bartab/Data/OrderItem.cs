@@ -15,6 +15,7 @@ namespace Data
         public string Name { get; set; }
         public int Amount { get; set; }
         public bool ErDrink { get; set; }
+        public float Price { get; set; }
 
         private string _name;
 

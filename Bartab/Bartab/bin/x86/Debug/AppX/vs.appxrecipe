@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-10-03T09:31:00.084</Modified>
+      <Modified>2017-10-05T09:55:46.177</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\Bartab.exe">
       <PackagePath>entrypoint\Bartab.exe</PackagePath>
-      <Modified>2017-10-03T09:30:55.482</Modified>
+      <Modified>2017-10-05T09:55:45.881</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xkrk\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -539,7 +539,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\Bartab.xr.xml">
       <PackagePath>Bartab.xr.xml</PackagePath>
-      <Modified>2017-10-03T09:30:55.125</Modified>
+      <Modified>2017-10-05T09:45:12.212</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -548,11 +548,11 @@
     <AppxPackagedFile Include="C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-10-03T09:30:59.524</Modified>
+      <Modified>2017-10-05T09:45:13.482</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\Core\Bartab.exe">
       <PackagePath>Bartab.exe</PackagePath>
-      <Modified>2017-10-03T09:31:00.071</Modified>
+      <Modified>2017-10-05T09:55:46.173</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

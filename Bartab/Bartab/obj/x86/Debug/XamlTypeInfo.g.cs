@@ -132,21 +132,27 @@ namespace Bartab.Bartab_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
-            _typeNameTable[0] = "Bartab.UserContent";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "ViewModel.UserContentViewModel";
-            _typeNameTable[4] = "Object";
-            _typeNameTable[5] = "Bartab.MainPage";
+            _typeNameTable = new string[9];
+            _typeNameTable[0] = "Bartab.Assets.ErrorMessage";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.ContentDialog";
+            _typeNameTable[2] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[3] = "Bartab.UserContent";
+            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[6] = "ViewModel.UserContentViewModel";
+            _typeNameTable[7] = "Object";
+            _typeNameTable[8] = "Bartab.MainPage";
 
-            _typeTable = new global::System.Type[6];
-            _typeTable[0] = typeof(global::Bartab.UserContent);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::ViewModel.UserContentViewModel);
-            _typeTable[4] = typeof(global::System.Object);
-            _typeTable[5] = typeof(global::Bartab.MainPage);
+            _typeTable = new global::System.Type[9];
+            _typeTable[0] = typeof(global::Bartab.Assets.ErrorMessage);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
+            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[3] = typeof(global::Bartab.UserContent);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[6] = typeof(global::ViewModel.UserContentViewModel);
+            _typeTable[7] = typeof(global::System.Object);
+            _typeTable[8] = typeof(global::Bartab.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -181,9 +187,9 @@ namespace Bartab.Bartab_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_UserContent() { return new global::Bartab.UserContent(); }
-        private object Activate_3_UserContentViewModel() { return new global::ViewModel.UserContentViewModel(); }
-        private object Activate_5_MainPage() { return new global::Bartab.MainPage(); }
+        private object Activate_3_UserContent() { return new global::Bartab.UserContent(); }
+        private object Activate_6_UserContentViewModel() { return new global::ViewModel.UserContentViewModel(); }
+        private object Activate_8_MainPage() { return new global::Bartab.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -195,36 +201,50 @@ namespace Bartab.Bartab_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Bartab.UserContent
+            case 0:   //  Bartab.Assets.ErrorMessage
+                userType = new global::Bartab.Bartab_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 1:   //  Windows.UI.Xaml.Controls.ContentDialog
+                xamlType = new global::Bartab.Bartab_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 2:   //  Windows.UI.Xaml.Controls.ContentControl
+                xamlType = new global::Bartab.Bartab_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  Bartab.UserContent
                 userType = new global::Bartab.Bartab_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_UserContent;
+                userType.Activator = Activate_3_UserContent;
                 userType.AddMemberName("UCVM");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 1:   //  Windows.UI.Xaml.Controls.Page
+            case 4:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Bartab.Bartab_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
+            case 5:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Bartab.Bartab_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  ViewModel.UserContentViewModel
+            case 6:   //  ViewModel.UserContentViewModel
                 userType = new global::Bartab.Bartab_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Object
+            case 7:   //  Object
                 xamlType = new global::Bartab.Bartab_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Bartab.MainPage
+            case 8:   //  Bartab.MainPage
                 userType = new global::Bartab.Bartab_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_MainPage;
+                userType.Activator = Activate_8_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

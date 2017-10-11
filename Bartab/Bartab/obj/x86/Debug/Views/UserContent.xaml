@@ -49,16 +49,16 @@
                     <RowDefinition Height="0"></RowDefinition>
                 </Grid.RowDefinitions>
                 <StackPanel Padding="5">
-                    <ComboBox x:ConnectionId='15'                                                 HorizontalAlignment="Center" Padding="5" x:Name="Find_bruger" PlaceholderText="Vælg Bartender"                                     ></ComboBox>
+                    <ComboBox x:ConnectionId='15'                                                 HorizontalAlignment="Center" Padding="5" x:Name="Find_bruger" PlaceholderText="Vælg Bartender"                                          ></ComboBox>
                     <Image>
-                        <Image.Source>
-                            <BitmapImage UriSource="https://s-media-cache-ak0.pinimg.com/originals/81/f6/d7/81f6d7a808cf0990d7099d003f7582a6.jpg"></BitmapImage>
+                        <Image.Source >
+                            <BitmapImage ></BitmapImage>
                         </Image.Source>
                     </Image>
                 </StackPanel>
-                <GridView x:ConnectionId='7' x:Name="Products"  Grid.Row="0" Grid.Column="1" IsItemClickEnabled="True"                                     >
+                <GridView x:ConnectionId='7' x:Name="Products"  Grid.Row="0" Grid.Column="1" IsItemClickEnabled="True"                                 >
                     <GridView.ItemTemplate>
-                        <DataTemplate                           >
+                        <DataTemplate                       >
                             <Grid x:ConnectionId='13'>
                                 <Button x:ConnectionId='14'                                                             Height="200" Width="200" FontSize="35"></Button>
                             </Grid>

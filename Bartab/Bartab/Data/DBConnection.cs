@@ -9,52 +9,60 @@ namespace Data
 {
     public class DBConnection
     {
-        private DBConnection()
-        {
-        }
-        private string databaseName = string.Empty;
-        public string DatabaseName
-        {
-            get { return databaseName; }
-            set { databaseName = value; }
-        }
+        public string connstring = "Server=localhost;Database=PaulsData;Uid=root;Pwd=E9ga;SslMode=None;";
 
-        public string Password { get; set; }
-        private MySqlConnection connection = null;
-        public MySqlConnection Connection
+        public List<Vare> getVare()
         {
-            get { return connection; }
+
+
+            return null;
         }
+        //private DBConnection()
+        //{
+        //}
+        //private string databaseName = string.Empty;
+        //public string DatabaseName
+        //{
+        //    get { return databaseName; }
+        //    set { databaseName = value; }
+        //}
 
-        private static DBConnection _instance = null;
-        public static DBConnection Instance()
-        {
-            if (_instance == null)
-                _instance = new DBConnection();
-            return _instance;
-        }
+        //public string Password { get; set; }
+        //private MySqlConnection connection = null;
+        //public MySqlConnection Connection
+        //{
+        //    get { return connection; }
+        //}
 
-        public bool IsConnect()
-        {
-            bool result = true;
-            if (Connection == null)
-            {
-                if (String.IsNullOrEmpty(databaseName))
-                    result = false;
+        //private static DBConnection _instance = null;
+        //public static DBConnection Instance()
+        //{
+        //    if (_instance == null)
+        //        _instance = new DBConnection();
+        //    return _instance;
+        //}
 
-                string connstring = "Server=35.195.31.100;Database=PaulsData;Uid=root;Pwd=password;SslMode=None;";
-                connection = new MySqlConnection(connstring);
-                connection.Open();
-                result = true;
-            }
+        //public bool IsConnect()
+        //{
+        //    bool result = true;
+        //    if (Connection == null)
+        //    {
+        //        if (String.IsNullOrEmpty(databaseName))
+        //            result = false;
 
-            return result;
-        }
+        //        string connstring = "Server=localhost;Database=PaulsData;Uid=root;Pwd=E9ga;SslMode=None;";
+        //        connection = new MySqlConnection(connstring);
+        //        connection.Open();
+        //        result = true;
+        //    }
 
-        public void Close()
-        {
-            connection.Close();
-            _instance = null;
-        }
+        //    return result;
+        //}
+
+        //public void Close()
+        //{
+        //    connection.Close();
+        //    _instance = null;
+        //}
     }
 }

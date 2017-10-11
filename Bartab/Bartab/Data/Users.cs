@@ -16,5 +16,6 @@ namespace Data
         public string Email { get; set; }
         public byte[] Billede { get; set; }
         public Role Role { get; set; }
+        public string Semester { get; set; }
     }
 }

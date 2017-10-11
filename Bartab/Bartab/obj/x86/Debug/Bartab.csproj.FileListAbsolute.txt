@@ -219,3 +219,8 @@ C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\qualifiers.txt
 C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\bin\x86\Debug\Assets\ErrorMessage.xbf
+C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\Assets\ErrorMessage.g.i.cs
+C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\Assets\ErrorMessage.g.cs
+C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\Assets\ErrorMessage.xaml
+C:\Users\xkrk\Documents\GitHub\Bartab\Bartab\Bartab\obj\x86\Debug\Assets\ErrorMessage.xbf
